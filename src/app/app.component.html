@@ -54,15 +54,15 @@
         <th scope="row">{{ articulos.codigo}}</th>
         <td>{{ articulos.descripcion}}</td>
         <td>{{ articulos.precio}}</td>
-        <td><button (click)="borrarArticulo(articulos)">Borrar</button></td>
-        <td><button (click)="seleccionarArticulo(articulos)">Seleccionar</button></td>
+        <td><button (click)="borrarArticulo(articulos)" class="btn btn-danger">Borrar</button></td>
+        <td><button (click)="seleccionarArticulo(articulos)" class="btn btn-success">Seleccionar</button></td>
       </tr>
     </tbody>
   </table>
   <form class="form-row">
     <div class="form-group col-md-2">
        <label for="nombre" >Codigo</label>
-       <input type="number" class="form-control" name="codigo" placeholder="codigo" [(ngModel)]="codigoInput" >
+       <input type="number" class="form-control" min="1" name="codigo" placeholder="codigo" [(ngModel)]="codigoInput" >
     </div>
     <div class="form-group col-md-2">
       <label for="apellido" >Descripción</label>
@@ -70,11 +70,12 @@
     </div>
     <div class="form-group col-md-2">
       <label for="apellido" >Precio</label>
-      <input type="number" class="form-control" name="precio" placeholder="Precio" [(ngModel)]="precioInput" >
+      <input type="number" class="form-control" name="precio" min="0" placeholder="Precio" [(ngModel)]="precioInput" >
     </div>
    <div class="col">
-     <button type="submit" class="btn btn-primary m-2" (click)="agregarArticulo()">Agregar</button>
-     <button type="submit" class="btn btn-primary" (click)="modificarArticulo()">Modificar</button>
+     <button type="submit" class="btn btn-primary" (click)="agregarArticulo()">Agregar</button>
+     <button type="submit" class="btn btn-primary m-2" (click)="modificarArticulo()">Modificar</button>
+     <button type="submit" class="btn btn-primary" (click)="limpiarValores()">Limpiar</button>
    </div>
 
 
