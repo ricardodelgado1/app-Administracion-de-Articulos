@@ -23,10 +23,6 @@ export class AppComponent {
                           new Articulo(3,'melon',80.000) ];
 
 
-  agregarPersona(){
-    let persona1=new Persona(this.nombreInput, this.apellidoInput);
-    this.personas.push(persona1);
-  }
 
   agregarArticulo(){
     let articulo1=new Articulo(this.codigoInput, this.descripcionInput, this.precioInput);
