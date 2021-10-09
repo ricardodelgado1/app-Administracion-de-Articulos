@@ -10,12 +10,11 @@ import { Articulo } from './articulo.model';
 
 export class AppComponent {
   titulo = 'Administración de Articulos ';
-  nombreInput:string = '';
-  apellidoInput:string = '';
 
-  codigoInput:number = 0;
-  descripcionInput:string = '';
-  precioInput:number = 0;
+
+  codigoInput!:number;
+  descripcionInput!:string;
+  precioInput!:number;
 
 
   articulos:Articulo[] = [new Articulo(1,'Papas',10000),
@@ -55,6 +54,8 @@ export class AppComponent {
 
      }
 
+
+
   seleccionarArticulo(articulosel:Articulo){
 
 
@@ -73,6 +74,16 @@ export class AppComponent {
     for(let i=0;i<this.articulos.length;i++)
       if (this.articulos[i].codigo==this.codigoInput)
       {
+        if (this.descripcionInput=='')
+        {
+          alert('Debe ingresar un valor en la descripcion');
+          return;
+        }
+        if (this.precioInput<=0)
+        {
+          alert('Debe ingresar un precio correcto mayor que 0');
+          return;
+        }
         this.articulos[i].descripcion=this.descripcionInput;
         this.articulos[i].precio=this.precioInput;
         return;
@@ -86,4 +97,26 @@ export class AppComponent {
      this.precioInput= 0;
   }
 
+  /*
+  validaciones()
+  {
+      if (this.codigoInput<=0  )
+      {
+        alert('El codigo debe ser mayor que 0');
+        return;
+      }
+      if (this.descripcionInput=='')
+      {
+        alert('Debe ingresar un valor en la descripcion');
+        return;
+      }
+      if (this.precioInput<=0)
+      {
+        alert('Debe ingresar un precio correcto mayor que 0');
+        return;
+      }
+
+
+  }
+*/
 }
