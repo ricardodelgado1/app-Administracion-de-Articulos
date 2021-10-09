@@ -1,0 +1,83 @@
+<!--
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <h1> {{ titulo }} </h1>
+    </div>
+  </div>
+  <hr>
+  <form class="form-row">
+    <div class="form-group col-md-2">
+       <label for="nombre" >Nombre</label>
+       <input type="text" class="form-control" name="nombre" placeholder="Nombre de persona" [(ngModel)]="nombreInput" >
+    </div>
+    <div class="form-group col-md-2">
+      <label for="apellido" >Apellido</label>
+      <input type="text" class="form-control" name="apellido" placeholder="Apellido de persona" [(ngModel)]="apellidoInput" >
+   </div>
+   <div class="col">
+     <button type="submit" class="btn btn-primary" (click)="agregarPersona()">Agregar Persona</button>
+   </div>
+
+  </form>
+
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let persona of personas; let i=index" >
+        {{ i+1 }} - {{ persona.nombre }} - {{ persona.apellido }}
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1> {{ titulo }} </h1>
+    </div>
+  </div>
+  <hr>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Borrar</th>
+        <th scope="col">Seleccionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulos of articulos" >
+        <th scope="row">{{ articulos.codigo}}</th>
+        <td>{{ articulos.descripcion}}</td>
+        <td>{{ articulos.precio}}</td>
+        <td><button>Borrar</button></td>
+        <td><button (click)="seleccionarArticulo()">Seleccionar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <form class="form-row">
+    <div class="form-group col-md-2">
+       <label for="nombre" >Codigo</label>
+       <input type="number" class="form-control" name="codigo" placeholder="codigo" [(ngModel)]="codigoInput" >
+    </div>
+    <div class="form-group col-md-2">
+      <label for="apellido" >Descripción</label>
+      <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" [(ngModel)]="descripcionInput" >
+    </div>
+    <div class="form-group col-md-2">
+      <label for="apellido" >Precio</label>
+      <input type="number" class="form-control" name="precio" placeholder="Precio" [(ngModel)]="precioInput" >
+    </div>
+   <div class="col">
+     <button type="submit" class="btn btn-primary m-2" (click)="agregarArticulo()">Agregar</button>
+     <button type="submit" class="btn btn-primary" (click)="agregarPersona()">Modificar</button>
+   </div>
+
+
+  </form>
+
+</div>
