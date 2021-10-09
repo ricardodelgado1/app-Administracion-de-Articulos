@@ -54,8 +54,8 @@
         <th scope="row">{{ articulos.codigo}}</th>
         <td>{{ articulos.descripcion}}</td>
         <td>{{ articulos.precio}}</td>
-        <td><button>Borrar</button></td>
-        <td><button (click)="seleccionarArticulo()">Seleccionar</button></td>
+        <td><button (click)="borrarArticulo(articulos)">Borrar</button></td>
+        <td><button (click)="seleccionarArticulo(articulos)">Seleccionar</button></td>
       </tr>
     </tbody>
   </table>
@@ -74,7 +74,7 @@
     </div>
    <div class="col">
      <button type="submit" class="btn btn-primary m-2" (click)="agregarArticulo()">Agregar</button>
-     <button type="submit" class="btn btn-primary" (click)="agregarPersona()">Modificar</button>
+     <button type="submit" class="btn btn-primary" (click)="modificarArticulo()">Modificar</button>
    </div>
 
 
